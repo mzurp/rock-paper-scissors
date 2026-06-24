@@ -1,69 +1,25 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!--Cabecera de todo archivo html-->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Piedra, Papel o Tijeras</title>
 </head>
 
 <body>
 
-<script>
-    console.log("Hello, World!")
-</script>
+ <h1>Piedra, Papel o Tijeras</h1> <!--Título principal-->
 
-<script>
-    function getComputerChoice() {
-    let randomNumber = Math.floor(Math.random() * 3);
+    <button id="rock">Piedra</button>  <!--botones para la web--> 
+    <button id="paper">Papel</button>
+    <button id="scissors">Tijeras</button>
 
-        if (randomNumber === 0) {
-            return "piedra";
-        } else if (randomNumber === 1) {
-            return "papel";
-        } else {
-            return "tijeras";
-        }
-    }
-    console.log(getComputerChoice());
-</script>
+    <h2>Resultado</h2>
+    <div id="results">¡Empieza la partida!</div> <!--Resultado una vez que el código ha funcionado-->
 
-<script>
-    function getHumanChoice(){
-        return prompt("¿Qué prefieres? piedra, papel o tijeras");
-    }
-    console.log(getHumanChoice());
-</script>
+    <h2>Puntuación</h2>
+    <div id="score">Jugador: 0 | Computadora: 0</div> <!--Puntuación obtenida-->
 
-<script>
-    let humanScore = 0;
-    let computerScore = 0;
-</script>
-
-<script>
-    function playRound(humanChoice, computerChoice) {
-        humanChoice = humanChoice.toLowerCase();
-
-    if (humanChoice === computerChoice) {
-        console.log("¡Empate!");
-    } else if (
-        (humanChoice === "piedra" && computerChoice === "tijeras") ||
-        (humanChoice === "papel" && computerChoice === "piedra") ||
-        (humanChoice === "tijeras" && computerChoice === "papel")
-    ) {
-        humanScore++;
-        console.log(`¡Ganaste! ${humanChoice} vence a ${computerChoice}`);
-    } else {
-        computerScore++;
-        console.log(`¡Perdiste! ${computerChoice} vence a ${humanChoice}`);
-    }
-        console.log(`Jugador: ${humanScore} | Computadora: ${computerScore}`);
-    }   
-
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-
-    playRound(humanSelection, computerSelection);  
-</script>
-
+    <script src="javaScript.js"></script> <!--Enlace con el archivo javaScript.js-->
 </body>
 </html>
